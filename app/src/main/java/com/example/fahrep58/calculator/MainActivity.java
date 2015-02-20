@@ -4,9 +4,22 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 
 public class MainActivity extends ActionBarActivity {
+
+    public String excellent = "";
+
+    public void addToList(String num)
+    {
+        TextView tv = (TextView)findViewById(R.id.textView2);
+
+        if (excellent == "") excellent = num;
+            else excellent = excellent + " " + num;
+
+       tv.setText(excellent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
