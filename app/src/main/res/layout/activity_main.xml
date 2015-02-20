@@ -24,7 +24,8 @@
         android:layout_alignParentStart="true"
         android:layout_marginTop="73dp"
         android:backgroundTint="#3399FF"
-        android:background="#3399FF" />
+        android:background="#3399FF"
+        android:onClick="addToList(one)" />
 
     <Button
         android:layout_width="wrap_content"
