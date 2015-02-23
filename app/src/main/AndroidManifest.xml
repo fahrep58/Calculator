@@ -16,6 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Solve"
+            android:label="@string/title_activity_solve" >
+        </activity>
     </application>
 
 </manifest>

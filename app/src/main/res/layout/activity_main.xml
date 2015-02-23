@@ -25,7 +25,7 @@
         android:layout_marginTop="73dp"
         android:backgroundTint="#3399FF"
         android:background="#3399FF"
-        android:onClick="addToList(one)" />
+        android:onClick="addToListOne" />
 
     <Button
         android:layout_width="wrap_content"
@@ -35,7 +35,8 @@
         android:layout_alignTop="@+id/button"
         android:layout_toEndOf="@+id/button"
         android:backgroundTint="#3399FF"
-        android:background="#3399FF" />
+        android:background="#3399FF"
+        android:onClick="addToListTwo" />
 
     <Button
         android:layout_width="wrap_content"
@@ -45,7 +46,8 @@
         android:layout_alignTop="@+id/button2"
         android:layout_toEndOf="@+id/button2"
         android:backgroundTint="#3399FF"
-        android:background="#3399FF" />
+        android:background="#3399FF"
+        android:onClick="addToListThree" />
 
     <Button
         android:layout_width="wrap_content"
@@ -54,7 +56,8 @@
         android:id="@+id/button4"
         android:layout_alignTop="@+id/button3"
         android:layout_toEndOf="@+id/button3"
-        android:background="#FFCC66" />
+        android:background="#FFCC66"
+        android:onClick="addToListAdd" />
 
     <Button
         android:layout_width="wrap_content"
@@ -64,7 +67,8 @@
         android:layout_below="@+id/button"
         android:layout_alignParentStart="true"
         android:backgroundTint="#3399FF"
-        android:background="#3399FF" />
+        android:background="#3399FF"
+        android:onClick="addToListFour" />
 
     <Button
         android:layout_width="wrap_content"
@@ -74,7 +78,8 @@
         android:layout_below="@+id/button2"
         android:layout_alignStart="@+id/button2"
         android:backgroundTint="#3399FF"
-        android:background="#3399FF" />
+        android:background="#3399FF"
+        android:onClick="addToListFive" />
 
     <Button
         android:layout_width="wrap_content"
@@ -84,7 +89,8 @@
         android:layout_below="@+id/button3"
         android:layout_toEndOf="@+id/button6"
         android:backgroundTint="#3399FF"
-        android:background="#3399FF" />
+        android:background="#3399FF"
+        android:onClick="addToListSix" />
 
     <Button
         android:layout_width="wrap_content"
@@ -93,7 +99,8 @@
         android:id="@+id/button8"
         android:layout_below="@+id/button3"
         android:layout_toEndOf="@+id/button7"
-        android:background="#FFCC66" />
+        android:background="#FFCC66"
+        android:onClick="addToListSub" />
 
     <Button
         android:layout_width="wrap_content"
@@ -103,7 +110,8 @@
         android:layout_below="@+id/button5"
         android:layout_alignParentStart="true"
         android:backgroundTint="#3399FF"
-        android:background="#3399FF" />
+        android:background="#3399FF"
+        android:onClick="addToListSeven" />
 
     <Button
         android:layout_width="wrap_content"
@@ -113,7 +121,8 @@
         android:layout_alignTop="@+id/button9"
         android:layout_toEndOf="@+id/button9"
         android:backgroundTint="#3399FF"
-        android:background="#3399FF" />
+        android:background="#3399FF"
+        android:onClick="addToListEight" />
 
     <Button
         android:layout_width="wrap_content"
@@ -123,7 +132,8 @@
         android:layout_alignTop="@+id/button10"
         android:layout_toEndOf="@+id/button10"
         android:backgroundTint="#3399FF"
-        android:background="#3399FF" />
+        android:background="#3399FF"
+        android:onClick="addToListNine" />
 
     <Button
         android:layout_width="wrap_content"
@@ -132,18 +142,17 @@
         android:id="@+id/button12"
         android:layout_alignTop="@+id/button11"
         android:layout_toEndOf="@+id/button11"
-        android:background="#FFCC66" />
+        android:background="#FFCC66"
+        android:onClick="addToListMulti" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/button13"
-        android:layout_below="@+id/button10"
-        android:layout_alignStart="@+id/button10"
-        android:layout_marginTop="120dp"
-        android:text="Evaluate"
+        android:text="Solve"
         android:background="#FFCC66"
-        android:layout_toStartOf="@+id/button16" />
+        android:layout_below="@+id/button22"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -153,7 +162,8 @@
         android:layout_below="@+id/button10"
         android:layout_alignStart="@+id/button10"
         android:backgroundTint="#3399FF"
-        android:background="#3399FF" />
+        android:background="#3399FF"
+        android:onClick="addToListZero" />
 
     <Button
         android:layout_width="wrap_content"
@@ -173,7 +183,8 @@
         android:id="@+id/button16"
         android:layout_below="@+id/button12"
         android:layout_alignStart="@+id/button12"
-        android:background="#FFCC66" />
+        android:background="#FFCC66"
+        android:onClick="addToListDivide" />
 
     <Button
         android:layout_width="wrap_content"
@@ -193,4 +204,53 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clear"
+        android:id="@+id/button18"
+        android:layout_below="@+id/button14"
+        android:layout_alignParentStart="true"
+        android:background="#FFCC66"
+        android:onClick="clearList" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Integer Div"
+        android:id="@+id/button19"
+        android:layout_below="@+id/button16"
+        android:layout_alignParentEnd="true"
+        android:background="#FFCC66"
+        android:onClick="addToListIntDivide" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=")"
+        android:id="@+id/button20"
+        android:layout_below="@+id/button14"
+        android:layout_toEndOf="@+id/button14"
+        android:background="#FFCC66"
+        android:onClick="addToListRight" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="("
+        android:id="@+id/button21"
+        android:layout_below="@+id/button14"
+        android:layout_toEndOf="@+id/button15"
+        android:background="#FFCC66"
+        android:onClick="addToListLeft" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:id="@+id/button22"
+        android:layout_below="@+id/button18"
+        android:layout_alignParentStart="true"
+        android:background="#FFCC66" />
 </RelativeLayout>
