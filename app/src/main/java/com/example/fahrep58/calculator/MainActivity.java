@@ -12,16 +12,23 @@ import android.widget.TextView;
 
 public class MainActivity extends ActionBarActivity {
 
+    public final static String MY_MSG = "com.example.fahrep58.calculator.MESSAGE";
+    public void sendMessage(View v)
+    {
+       Intent intent = new Intent(this, Solve.class);
+        TextView tv = (TextView)findViewById(R.id.textView2);
+        String message = tv.getText().toString();
 
-//    public void sendMessage(View v)
-//    {
-//        Intent intent = new Intent(this, otherActivity.class);
-//        EditText editText = (EditText)findViewById(R.id.edit_message);
-//        String message = editText.getText().toString();
-//        intent.putExtra(MY_MSG, message);
-//        startActivity(intent);
-//
-//    }
+        InfixEvaluator infix = new InfixEvaluator();
+
+        infix.convertToPostfix(message);
+
+        message = "" + infix.evaluatePostfix(infix.getExpression());
+
+        intent.putExtra(MY_MSG, message);
+        startActivity(intent);
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +42,22 @@ public class MainActivity extends ActionBarActivity {
 
     public String excellent = "";
 
+    public void backspace(View view) {
+
+        TextView tv = (TextView)findViewById(R.id.textView2);
+
+        if (excellent == "")
+        {
+            tv.setText(excellent);
+        }
+        else
+        {
+            excellent = excellent.substring(0,excellent.length() -1);
+        }
+
+        tv.setText(excellent);
+
+    }
     public void addToListOne(View view)
     {
         TextView tv = (TextView)findViewById(R.id.textView2);
