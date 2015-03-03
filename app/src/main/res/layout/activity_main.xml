@@ -150,11 +150,11 @@
         android:layout_height="wrap_content"
         android:text="0"
         android:id="@+id/button14"
-        android:layout_below="@+id/button10"
-        android:layout_alignStart="@+id/button10"
         android:backgroundTint="#3399FF"
         android:background="#3399FF"
-        android:onClick="addToListZero" />
+        android:onClick="addToListZero"
+        android:layout_alignTop="@+id/button17"
+        android:layout_toEndOf="@+id/button15" />
 
     <Button
         android:layout_width="wrap_content"
@@ -162,10 +162,8 @@
         android:text="."
         android:id="@+id/button15"
         android:background="#3399FF"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/button9"
-        android:layout_alignBottom="@+id/button14"
-        android:layout_toStartOf="@+id/button10" />
+        android:layout_above="@+id/button18"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -184,7 +182,10 @@
         android:id="@+id/button17"
         android:layout_below="@+id/button11"
         android:layout_toStartOf="@+id/button16"
-        android:background="#FFCC66" />
+        android:background="#FFCC66"
+        android:onClick="addToListMod"
+        android:layout_alignBottom="@+id/button16"
+        android:layout_alignEnd="@+id/button11" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -202,10 +203,10 @@
         android:layout_height="wrap_content"
         android:text="Clear"
         android:id="@+id/button18"
-        android:layout_below="@+id/button14"
-        android:layout_alignParentStart="true"
         android:background="#FFCC66"
-        android:onClick="clearList" />
+        android:onClick="clearList"
+        android:layout_alignTop="@+id/button21"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -215,7 +216,9 @@
         android:layout_below="@+id/button16"
         android:layout_alignParentEnd="true"
         android:background="#FFCC66"
-        android:onClick="addToListIntDivide" />
+        android:onClick="addToListIntDivide"
+        android:layout_alignStart="@+id/button16"
+        android:layout_above="@+id/button22" />
 
     <Button
         android:layout_width="wrap_content"

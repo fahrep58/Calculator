@@ -143,7 +143,7 @@ public class InfixEvaluator {
          */
         public void convertToPostfix(String in)
         {
-            String abc = "[_A-Za-z]";
+            String abc = "[_A-Za-hj-z]";
             String num = "(\\d+(\\.\\d+)?)";
             int priority = 0;
 
@@ -158,7 +158,7 @@ public class InfixEvaluator {
 
             // creates stringtokenizer and keeps the delimiters as tokens
 
-            String delim = "()+-/*";
+            String delim = "()+-/*i%";
             StringTokenizer st = new StringTokenizer(in, delim ,true);
 
 
@@ -221,7 +221,7 @@ public class InfixEvaluator {
 
                 // priority is the way to check for an operator of lower value
 
-                if (test.equals("+") || test.equals("/") || test.equals("-") || test.equals("*"))
+                if (test.equals("+") || test.equals("/") || test.equals("-") || test.equals("*") || test.equals("i") || test.equals("%"))
                 {
                     if (test.equals("+") || test.equals("-"))
                         priority = 1;
@@ -306,11 +306,11 @@ public class InfixEvaluator {
          * @param in String variable string you wish to split
          * @return double, the result of the evaluation
          */
-        public double evaluatePostfix(String in)
+        public String evaluatePostfix(String in)
         {
 
             // the string passed is delimited by spaces, creates a tokenizer
-
+            String thewholething ="";
             String delim = " ";
             StringTokenizer st = new StringTokenizer(in, delim ,false);
 
@@ -345,6 +345,21 @@ public class InfixEvaluator {
 
                     stack.push(op1 / op2);
 
+                    double result = op1 / op2;
+                    thewholething = thewholething + "\n" + op1 + " / " + op2 + "\n                       " + result + "\n";
+
+                }
+
+                if (test.equals("%"))
+                {
+                    op2 = (double)stack.pop();
+                    op1 = (double)stack.pop();
+
+                    stack.push(op1 % op2);
+
+                    double result = op1 % op2;
+                    thewholething = thewholething + "\n" + op1 + " % " + op2 + "\n                       " + result + "\n";
+
                 }
 
                 if (test.equals("+"))
@@ -354,14 +369,24 @@ public class InfixEvaluator {
 
                     stack.push(op1 + op2);
 
+                    double result = op1 + op2;
+                    thewholething = thewholething + "\n" + op1 + " + " + op2 + "\n                       " + result + "\n";
+
                 }
                 //add
                 if (test.equals("i"))
                 {
-                    int intop2 = (int)stack.pop();
-                    int intop1 = (int)stack.pop();
+
+                    Double d = new Double((double)stack.pop());
+                    Double d2 = new Double((double)stack.pop());
+
+                    int intop2 = d.intValue();
+                    int intop1 = d2.intValue();
 
                     stack.push((double)(intop1 / intop2));
+
+                    double result = (double)(intop1 / intop2);
+                    thewholething = thewholething + "\n" + intop1 + " i " + intop2 + "\n                       " + result + "\n";
 
                 }
                 // multipy
@@ -373,6 +398,9 @@ public class InfixEvaluator {
 
                     stack.push(op1 * op2);
 
+                    double result = op1 * op2;
+                    thewholething = thewholething + "\n" + op1 + " * " + op2 + "\n                       " + result + "\n";
+
                 }
 
                 //subtraction
@@ -383,6 +411,9 @@ public class InfixEvaluator {
 
                     stack.push(op1 - op2);
 
+                    double result = op1 - op2;
+                    thewholething = thewholething + "\n" + op1 + " - " + op2 + "\n                       " + result + "\n";
+
                 }
             }
 
@@ -390,7 +421,7 @@ public class InfixEvaluator {
 
             double testing = (double)stack.pop();
 
-            return testing;
+            return thewholething;
         }
 
         /** main class

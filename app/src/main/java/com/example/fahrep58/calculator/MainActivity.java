@@ -19,12 +19,13 @@ public class MainActivity extends ActionBarActivity {
         TextView tv = (TextView)findViewById(R.id.textView2);
         String message = tv.getText().toString();
 
-        InfixEvaluator infix = new InfixEvaluator();
+        if (!message.equalsIgnoreCase("8008135")) {
+            InfixEvaluator infix = new InfixEvaluator();
 
-        infix.convertToPostfix(message);
+            infix.convertToPostfix(message);
 
-        message = "" + infix.evaluatePostfix(infix.getExpression());
-
+            message = message + "\n" + infix.evaluatePostfix(infix.getExpression());
+        }
         intent.putExtra(MY_MSG, message);
         startActivity(intent);
 
@@ -161,7 +162,7 @@ public class MainActivity extends ActionBarActivity {
     {
         TextView tv = (TextView)findViewById(R.id.textView2);
 
-        if (excellent == "") excellent = ".";
+        if (excellent == "") excellent = "";
         else excellent = excellent + ".";
 
         tv.setText(excellent);
@@ -181,7 +182,7 @@ public class MainActivity extends ActionBarActivity {
     {
         TextView tv = (TextView)findViewById(R.id.textView2);
 
-        if (excellent == "") excellent = ")";
+        if (excellent == "") excellent = "";
         else excellent = excellent + ")";
 
         tv.setText(excellent);
@@ -191,7 +192,7 @@ public class MainActivity extends ActionBarActivity {
     {
         TextView tv = (TextView)findViewById(R.id.textView2);
 
-        if (excellent == "") excellent = "*";
+        if (excellent == "") excellent = "";
         else excellent = excellent + "*";
 
         tv.setText(excellent);
@@ -201,7 +202,7 @@ public class MainActivity extends ActionBarActivity {
     {
         TextView tv = (TextView)findViewById(R.id.textView2);
 
-        if (excellent == "") excellent = "+";
+        if (excellent == "") excellent = "";
         else excellent = excellent + "+";
 
         tv.setText(excellent);
@@ -221,8 +222,18 @@ public class MainActivity extends ActionBarActivity {
     {
         TextView tv = (TextView)findViewById(R.id.textView2);
 
-        if (excellent == "") excellent = "/";
+        if (excellent == "") excellent = "";
         else excellent = excellent + "/";
+
+        tv.setText(excellent);
+    }
+
+    public void addToListMod(View view)
+    {
+        TextView tv = (TextView)findViewById(R.id.textView2);
+
+        if (excellent == "") excellent = "";
+        else excellent = excellent + "%";
 
         tv.setText(excellent);
     }

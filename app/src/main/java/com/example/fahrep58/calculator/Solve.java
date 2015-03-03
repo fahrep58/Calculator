@@ -5,6 +5,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
@@ -17,6 +19,12 @@ public class Solve extends ActionBarActivity {
 
         Intent main = getIntent();
         String msg = main.getStringExtra(MainActivity.MY_MSG);
+
+        if (msg.equalsIgnoreCase("8008135"))
+        {
+            ImageView iv = (ImageView)findViewById(R.id.boo);
+            iv.setVisibility(View.VISIBLE);
+        }
 
         TextView change = (TextView)findViewById(R.id.test);
         change.setText(msg);
